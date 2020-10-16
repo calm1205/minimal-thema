@@ -84,7 +84,7 @@
           <h1 class="article-top-title">payjpでのサブスクリプション決済payjpでのサブスクリプション決済</h1>
           <div class="article-top-category">rails</div>
         </div>
-        <img src="../image/sauna.jpeg" class="article-image">
+        <img src="image/sauna.jpeg" class="article-image">
         <div class="article-detail">
           <div class="article-detail-text">
             payjpでのサブスクリプション決済payjpでのサスクリプション決済payjpでのサスクリプション決済payjpでのサスクリプション決済payjpでのサブスクョン決済payjpでのサブスクリプション決済payjpでのサブスクリプション決済
