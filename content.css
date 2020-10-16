@@ -139,7 +139,8 @@ content .side .profile {
 }
 
 content .side .profile-image {
-  width: 30%;
+  width: 60%;
+  max-width: 150px;
   border-radius: 50%;
   border: 15px solid whitesmoke;
   margin: 0 auto;
