@@ -1,0 +1,68 @@
+/* ========== footer =========== */
+@media screen and (max-width: 959px) {
+  footer .footer-content-box {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  footer {
+    height: 400px;
+  }
+  footer .footer-content {
+    height: 330px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  footer .footer-content-box {
+    width: 33%;
+  }
+}
+
+footer {
+  background-color: white;
+}
+
+footer .footer-content {
+  width: 80%;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+footer .footer-content-box .about-me-content {
+  margin-top: 30px;
+  padding-right: 30px;
+  color: #7b7b7b;
+  letter-spacing: 1px;
+}
+
+footer .footer-content-title {
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+footer .footer-content .portfolio-list {
+  margin-top: 30px;
+  padding-right: 30px;
+}
+
+footer .footer-content .portfolio-list li {
+  border-top: dashed 1px #686868;
+  padding: 15px 10px;
+  color: #7b7b7b;
+  font-size: 1.3rem;
+}
+
+footer .copyright {
+  height: 70px;
+  background-color: #333333;
+  color: #EBEBEB;
+  text-align: center;
+  line-height: 70px;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+}
+/*# sourceMappingURL=footer.css.map */

@@ -1,0 +1,309 @@
+.menu {
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  position: fixed;
+  top: 0;
+}
+
+.menu-title {
+  height: 40px;
+  font-size: 3rem;
+  line-height: 40px;
+  letter-spacing: 0.5rem;
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 2px solid #EBEBEB;
+}
+
+.menu-list {
+  height: calc( 100vh - 140px);
+  margin-left: 20px;
+  font-weight: 200;
+}
+
+.menu-list a {
+  text-decoration: none;
+  color: #333333;
+}
+
+.menu-list .category-btn:hover {
+  color: #7b7b7b;
+}
+
+.menu-list-title {
+  border-top: 2px solid #EBEBEB;
+  padding: 10px;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.menu-list-top {
+  border-top: none;
+}
+
+.menu-list .second-list {
+  padding-left: 30px;
+  margin-bottom: 30px;
+}
+
+.menu-list .second-list li {
+  font-size: 1.4rem;
+  padding: 10px;
+}
+
+.menu .close {
+  height: 40px;
+  line-height: 40px;
+  letter-spacing: 0.3rem;
+  text-align: center;
+  border-top: 2px solid #EBEBEB;
+  font-size: 1.5rem;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.menu .close:hover {
+  color: #7b7b7b;
+}
+
+.search-view {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.search-view .fa-times {
+  position: absolute;
+  top: 5vh;
+  right: 5vh;
+  font-size: 3rem;
+  color: #333333;
+  cursor: pointer;
+}
+
+.search-view-box {
+  width: 70%;
+  height: 25vh;
+  margin: 0 auto;
+}
+
+.search-view-box input {
+  width: 100%;
+  height: 15vh;
+  font-size: 4rem;
+  letter-spacing: 1px;
+  padding: 5px;
+  border: none;
+  border-bottom: 1px solid #333333;
+}
+
+.search-view-box input:focus {
+  outline: none;
+}
+
+.search-view-box-detail {
+  padding: 10px 0;
+  color: #7b7b7b;
+  font-size: 1.5rem;
+}
+
+/* ========== header =========== */
+.header {
+  height: 70px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.95);
+  position: fixed;
+}
+
+.header-search {
+  height: 70px;
+  width: 15%;
+  line-height: 70px;
+  text-align: center;
+}
+
+.header-search .fa-search {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.header-search .fa-search:hover {
+  opacity: 0.5;
+}
+
+@media screen and (min-width: 960px) {
+  .header .fa-bars {
+    display: none;
+  }
+  .header-menu {
+    width: 70%;
+    height: 70px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .header-menu a {
+    text-decoration: none;
+    color: #333333;
+  }
+  .header-menu a li {
+    line-height: 70px;
+    font-size: 1.3rem;
+    letter-spacing: 1.0px;
+    font-weight: 200;
+    margin-left: 30px;
+    cursor: pointer;
+  }
+  .header-menu a li:hover {
+    opacity: 0.5;
+  }
+}
+
+@media screen and (max-width: 959px) {
+  .header .fa-bars {
+    line-height: 70px;
+    margin-left: 30px;
+    font-size: 3rem;
+    cursor: pointer;
+  }
+  .header .fa-bars:hover {
+    opacity: 0.5;
+  }
+  .header-menu {
+    display: none;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+    width: 0;
+  }
+  to {
+    opacity: 1;
+    width: 100vw;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    width: 0;
+  }
+  to {
+    opacity: 1;
+    width: 100vw;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+    width: 100vw;
+  }
+  to {
+    opacity: 0;
+    width: 0;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    width: 100vw;
+  }
+  to {
+    opacity: 0;
+    width: 0;
+  }
+}
+
+@-webkit-keyframes down {
+  from {
+    opacity: 0;
+    height: 0;
+  }
+  to {
+    opacity: 1;
+    height: 100vh;
+  }
+}
+
+@keyframes down {
+  from {
+    opacity: 0;
+    height: 0;
+  }
+  to {
+    opacity: 1;
+    height: 100vh;
+  }
+}
+
+@-webkit-keyframes upper {
+  from {
+    opacity: 1;
+    height: 100vh;
+  }
+  to {
+    opacity: 0;
+    height: 0;
+  }
+}
+
+@keyframes upper {
+  from {
+    opacity: 1;
+    height: 100vh;
+  }
+  to {
+    opacity: 0;
+    height: 0;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  -webkit-animation: fadeIn 0.5s;
+          animation: fadeIn 0.5s;
+}
+
+.non-show {
+  -webkit-animation: fadeOut 0.5s;
+          animation: fadeOut 0.5s;
+}
+
+.down {
+  -webkit-animation: down 0.5s;
+          animation: down 0.5s;
+}
+
+.upper {
+  -webkit-animation: upper 0.5s;
+          animation: upper 0.5s;
+}
+
+.ban-scroll {
+  overflow: hidden;
+}
+/*# sourceMappingURL=header.css.map */
