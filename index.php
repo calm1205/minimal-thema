@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <title>Minimal thema</title>
   <script src="https://kit.fontawesome.com/5e5ceae3ab.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="../css/_reset.css">
-  <link rel="stylesheet" href="../css/header.css">
-  <link rel="stylesheet" href="../css/content.css">
-  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="_reset.css">
+  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="content.css">
+  <link rel="stylesheet" href="footer.css">
 
   <script type="text/javascript" src="../javascript/header.js"></script>
 </head>
