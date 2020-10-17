@@ -4,13 +4,7 @@
   <meta charset="UTF-8">
   <title>Minimal thema</title>
   <script src="https://kit.fontawesome.com/5e5ceae3ab.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="_reset.css">
-  <link rel="stylesheet" href="header.css">
-  <link rel="stylesheet" href="content.css">
-  <link rel="stylesheet" href="footer.css">
-
-  <script type="text/javascript" src="header.js"></script>
+  <?php wp_head(); ?>
 </head>
 <body>
 
@@ -61,12 +55,22 @@
 
   <header class="header">
     <i class="fas fa-bars"></i>
-    <ul class="header-menu">
+    <?php
+      $defaults = array(
+        'menu_class'      => 'header-menu',
+        'container'       => false,
+        'link_before'     => '',
+        'link_after'      => '',
+        'theme_location'  => 'gloval-navigation',
+      );
+      wp_nav_menu( $defaults );
+    ?>
+    <!-- <ul class="header-menu">
       <a href=""><li class="home">HOME</li></a>
       <a href=""><li class="categories">CATEGORIES</li></a>
       <a href=""><li class="mind">LIFE</li></a>
       <a href=""><li class="about-me">ABOUT ME</li></a>
-    </ul>
+    </ul> -->
     <div class="header-search">
       <i class="fas fa-search"></i>
     </div>
@@ -79,61 +83,35 @@
   
   <content>
     <div class="articles">
-      <article class="article">
-        <div class="article-top">
-          <div class="article-top-date">2020/01/01</div>
-          <div class="article-top-title">payjpでのサブスクリプション決済payjpでのサブスクリプション決済</div>
-          <div class="article-top-category">rails</div>
-        </div>
-        <img src="image/sauna.jpeg" class="article-image">
-        <div class="article-detail">
-          <div class="article-detail-text">
-            payjpでのサブスクリプション決済payjpでのサスクリプション決済payjpでのサスクリプション決済payjpでのサスクリプション決済payjpでのサブスクョン決済payjpでのサブスクリプション決済payjpでのサブスクリプション決済
+      <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+        <article class="article">
+          <div class="article-top">
+            <div class="article-top-date"><?php the_time('Y/n/j'); ?></div>
+            <div class="article-top-title"><?php the_title(); ?></div>
+            <div class="article-top-category"><?php the_category( ' ' ); ?></div>
           </div>
-          <a href="#">
-            <div class="read-more">READ MORE</div>
-          </a>
-        </div>
-      </article>
 
-      <article class="article">
-        <div class="article-top">
-          <div class="article-top-date">2020/01/01</div>
-          <div class="article-top-title">payjpでのサブスクリプション決済payjpでのサブスクリプション決済</div>
-          <div class="article-top-category">rails</div>
-        </div>
-        <img src="image/sauna.jpeg" class="article-image">
-        <div class="article-detail">
-          <div class="article-detail-text">
-            payjpでのサブスクリプション決済payjpでのサスクリプション決済payjpでのサスクリプション決済payjpでのサスクリプション決済payjpでのサブスクョン決済payjpでのサブスクリプション決済payjpでのサブスクリプション決済
+          <?php if ( has_post_thumbnail() ) : ?>
+            <?php the_post_thumbnail( '', array('class' => 'article-image')); ?>
+          <?php else : ?>
+            <img src="<?php echo get_template_directory_uri(); ?>/image/sauna.jpeg" class="article-image">
+          <?php endif; ?>
+          <div class="article-detail">
+            <div class="article-detail-text"><?php the_excerpt(); ?></div>
+            <a href="<?php the_permalink(); ?>">
+              <div class="read-more">READ MORE</div>
+            </a>
           </div>
-          <a href="#">
-            <div class="read-more">READ MORE</div>
-          </a>
-        </div>
-      </article>
+        </article>
+      <?php endwhile; else : ?>
+      　　<p>記事がありません。</p>
+      <?php endif; ?>
 
-      <article class="article">
-        <div class="article-top">
-          <div class="article-top-date">2020/01/01</div>
-          <div class="article-top-title">payjpでのサブスクリプション決済payjpでのサブスクリプション決済</div>
-          <div class="article-top-category">rails</div>
-        </div>
-        <img src="image/sauna.jpeg" class="article-image">
-        <div class="article-detail">
-          <div class="article-detail-text">
-            payjpでのサブスクリプション決済payjpでのサスクリプション決済payjpでのサスクリプション決済payjpでのサスクリプション決済payjpでのサブスクョン決済payjpでのサブスクリプション決済payjpでのサブスクリプション決済
-          </div>
-          <a href="#">
-            <div class="read-more">READ MORE</div>
-          </a>
-        </div>
-      </article>
     </div>
 
     <div class="side">
       <div class="profile">
-        <img src="image/art-profile.jpg" class="profile-image">
+        <img src="<?php echo get_template_directory_uri(); ?>/image/art-profile.jpg" class="profile-image">
         <div class="profile-name">銀杏くん</div>
         <div class="profile-text">
           2年間メーカーSEとして勤務した後、プログラミング教育事業に転職。
@@ -153,23 +131,23 @@
         <div class="recent-title">Recent Post</div>
 
         <div class="side-article">
-          <img src="image/sauna.jpeg" class="side-article-image">
+          <img src="<?php echo get_template_directory_uri(); ?>/image/sauna.jpeg" class="side-article-image">
           <div class="side-article-title">payjpでのサブスクション決済payjpでのサブスクリプション決済</div>
         </div>
         <div class="side-article">
-          <img src="image/sauna.jpeg" class="side-article-image">
+          <img src="<?php echo get_template_directory_uri(); ?>/image/sauna.jpeg" class="side-article-image">
           <div class="side-article-title">payjpでのサブスクション決済payjpでのサブスクリプション決済</div>
         </div>
         <div class="side-article">
-          <img src="image/sauna.jpeg" class="side-article-image">
+          <img src="<?php echo get_template_directory_uri(); ?>/image/sauna.jpeg" class="side-article-image">
           <div class="side-article-title">payjpでのサブスクション決済payjpでのサブスクリプション決済</div>
         </div>
         <div class="side-article">
-          <img src="image/sauna.jpeg" class="side-article-image">
+          <img src="<?php echo get_template_directory_uri(); ?>/image/sauna.jpeg" class="side-article-image">
           <div class="side-article-title">payjpでのサブスクション決済payjpでのサブスクリプション決済</div>
         </div>
         <div class="side-article">
-          <img src="image/sauna.jpeg" class="side-article-image">
+          <img src="<?php echo get_template_directory_uri(); ?>/image/sauna.jpeg" class="side-article-image">
           <div class="side-article-title">payjpでのサブスクション決済payjpでのサブスクリプション決済</div>
         </div>
       </div>

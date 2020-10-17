@@ -82,6 +82,15 @@ content .articles .article-top-category {
   font-size: 1.3rem;
 }
 
+content .article .article-top-category a{
+  text-decoration: none;
+  color: #7b7b7b;
+  margin: 0 10px;
+}
+content .article .article-top-category a:hover{
+  opacity: 0.5;
+}
+
 content .articles .article-image {
   width: 100%;
   height: auto;

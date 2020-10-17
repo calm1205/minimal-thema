@@ -85,7 +85,7 @@
           <h1 class="article-top-title">payjpでのサブスクリプション決済payjpでのサブスクリプション決済</h1>
           <div class="article-top-category">rails</div>
         </div>
-        <img src="image/sauna.jpeg" class="article-image">
+        <img src="<?php echo get_template_directory_uri(); ?>/image/sauna.jpeg" class="article-image">
         <div class="article-detail">
           <div class="article-detail-text">
             payjpでのサブスクリプション決済payjpでのサスクリプション決済payjpでのサスクリプション決済payjpでのサスクリプション決済payjpでのサブスクョン決済payjpでのサブスクリプション決済payjpでのサブスクリプション決済
@@ -97,7 +97,7 @@
 
     <div class="side">
       <div class="profile">
-        <img src="image/art-profile.jpg" class="profile-image">
+        <img src="<?php echo get_template_directory_uri(); ?>/image/art-profile.jpg" class="profile-image">
         <div class="profile-name">銀杏くん</div>
         <div class="profile-text">
           2年間メーカーSEとして勤務した後、プログラミング教育事業に転職。
@@ -117,23 +117,23 @@
         <div class="recent-title">Recent Post</div>
 
         <div class="side-article">
-          <img src="image/sauna.jpeg" class="side-article-image">
+          <img src="<?php echo get_template_directory_uri(); ?>/image/sauna.jpeg" class="side-article-image">
           <div class="side-article-title">payjpでのサブスクション決済payjpでのサブスクリプション決済</div>
         </div>
         <div class="side-article">
-          <img src="image/sauna.jpeg" class="side-article-image">
+          <img src="<?php echo get_template_directory_uri(); ?>/image/sauna.jpeg" class="side-article-image">
           <div class="side-article-title">payjpでのサブスクション決済payjpでのサブスクリプション決済</div>
         </div>
         <div class="side-article">
-          <img src="image/sauna.jpeg" class="side-article-image">
+          <img src="<?php echo get_template_directory_uri(); ?>/image/sauna.jpeg" class="side-article-image">
           <div class="side-article-title">payjpでのサブスクション決済payjpでのサブスクリプション決済</div>
         </div>
         <div class="side-article">
-          <img src="image/sauna.jpeg" class="side-article-image">
+          <img src="<?php echo get_template_directory_uri(); ?>/image/sauna.jpeg" class="side-article-image">
           <div class="side-article-title">payjpでのサブスクション決済payjpでのサブスクリプション決済</div>
         </div>
         <div class="side-article">
-          <img src="image/sauna.jpeg" class="side-article-image">
+          <img src="<?php echo get_template_directory_uri(); ?>/image/sauna.jpeg" class="side-article-image">
           <div class="side-article-title">payjpでのサブスクション決済payjpでのサブスクリプション決済</div>
         </div>
       </div>
