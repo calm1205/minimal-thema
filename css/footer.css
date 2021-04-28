@@ -22,16 +22,17 @@
 }
 
 footer {
-  background-color: white;
+  background-color: var(--bg-color);
+  box-shadow: var(--box-shadow);
 }
 
 footer .footer-content {
   width: 80%;
   margin: 0 auto;
-  padding: 50px 0;
+  padding: 50px 0 0;
 }
 
-footer .footer-content-box .about-me-content {
+footer .footer-content-box .textwidget p{
   margin-top: 30px;
   padding-right: 30px;
   color: #7b7b7b;
@@ -54,6 +55,23 @@ footer .footer-content .portfolio-list li {
   padding: 15px 10px;
   color: #7b7b7b;
   font-size: 1.3rem;
+}
+
+footer .footer-content .portfolio-list a{
+  text-decoration: none;
+  color: #686868;
+}
+
+footer .footer-content .portfolio-list a:hover{
+  opacity: 0.5;
+}
+
+
+footer .footer-content li.last-list {
+  box-sizing: border-box;
+  border-top: dashed 1px #686868;
+  margin-right: 30px;
+  list-style: none;
 }
 
 footer .copyright {

@@ -1,27 +1,49 @@
 body {
-  background-color: #f7f7f7;
+  background-color: var(--bg-color);
+  text-decoration: none;
 }
 
 /* ----- top ----- */
 .top {
-  height: 140px;
+  height: 160px;
   width: 100%;
-  color: #333333;
+  color: var(--text-color);
   text-align: center;
-  padding: 100px 0 30px;
+  padding: 160px 0 30px;
+  font-family: 'Courgette', cursive;
 }
 
 .top-title {
   font-size: 6rem;
   letter-spacing: 1rem;
+  margin-bottom: 10px;
 }
 
+.top-title a{
+  text-decoration: none;
+  color: #333333;
+}
+.top-title a:hover{
+  opacity: 0.5;
+}
 .top-sub-title {
   font-size: 1.3rem;
   letter-spacing: 1px;
 }
 
+/* ========== HCB content =========== */
+
+.hcb_wrap pre.prism, .hcb_wrap pre.prism code {
+  color: #f8f8f2;
+  text-shadow: 0 1px #1a1a1a;
+  background: #1f2227;
+}
+div.code-toolbar > div.toolbar {
+  top: 1.3em;
+}
+
 /* ========== content =========== */
+
 @media screen and (min-width: 960px) {
   content {
     display: -webkit-box;
@@ -31,10 +53,11 @@ body {
         -ms-flex-pack: justify;
             justify-content: space-between;
     width: 80%;
+    max-width: 1200px;
     margin: 50px auto;
   }
   content .articles {
-    max-width: 100%;
+    width: 76%;
   }
   content .side {
     width: 30%;
@@ -55,11 +78,31 @@ body {
   }
 }
 
+@media screen and (max-width: 480px) {
+  html{
+    font-size: 6px;
+    font-family: sans-serif;
+  }
+  content .articles {
+    width: 80%;
+    margin: 50px auto;
+  }
+  content .side {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+content .articles a{
+  text-decoration: none;
+}
+
 content .articles .article {
   width: 100%;
   margin-bottom: 70px;
-  padding-bottom: 30px;
-  background-color: white;
+  padding-bottom: 100px;
+  background-color: var(--bg-color);
+  box-shadow: var(--box-shadow);
 }
 
 content .articles .article-top {
@@ -73,8 +116,15 @@ content .articles .article-top {
 content .articles .article-top-title {
   margin: 30px auto 0;
   font-size: 2rem;
-  font-weight: 300;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  color: #7b7b7b;
+  cursor: pointer;
   width: 80%;
+}
+
+content .articles .article-top-title:hover {
+  opacity: 0.5;
 }
 
 content .articles .article-top-category {
@@ -82,11 +132,21 @@ content .articles .article-top-category {
   font-size: 1.3rem;
 }
 
+content .article .article-top-category a{
+  margin: 0 10px;
+  text-decoration: none;
+}
+content .article .article-top-category a:hover{
+  opacity: 0.5;
+}
+
 content .articles .article-image {
   width: 100%;
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
+  margin-bottom: 30px;
+  filter: grayscale(70%);
 }
 
 content .articles .article-detail {
@@ -102,8 +162,8 @@ content .articles .article-detail-text {
   color: #333333;
 }
 
-content .articles .article-detail a {
-  text-decoration: none;
+content .articles .article-detail .left-text{
+  text-align: left;
 }
 
 content .articles .article-detail a .read-more {
@@ -124,6 +184,115 @@ content .articles .article-detail a .read-more:hover {
   transition: 0.5s;
 }
 
+content .pagination{
+  display: flex;
+  justify-content: space-between;
+}
+content .pagination .previous a, content .pagination .next a{
+  display: block;
+  width: 70px;
+  padding: 15px;
+  background-color: var(--bg-color);
+  box-shadow: var(--box-shadow);
+  color: #7b7b7b;
+  font-size: 1.5rem;
+  text-align: center;
+}
+content .pagination .previous a:hover, content .pagination .next a:hover{
+  color: white;
+  transition: 0.2s;
+}
+
+
+/* ======= 投稿内容の装飾 ======== */
+content .articles .article-detail h2{
+  letter-spacing: 3px;
+  padding: 20px 20px 20px 50px;
+  vertical-align: middle;
+  margin: 100px 0 30px;
+  background-color: var(--bg-color);
+  box-shadow: var(--box-shadow);
+  border-left: 7px solid #333333;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+content .articles .article-detail h3{
+  letter-spacing: 2px;
+  padding:10px 10px 10px 20px;
+  margin: 50px 0 20px;
+  border-left: 7px solid #333333;
+  font-size: 2rem;
+  font-weight: bold;
+}
+content .articles .article-detail h4{
+  letter-spacing: 2px;
+  height: 30px;
+  padding: 20px 1rem 20px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+content .articles .article-detail h4:before{
+  content: '\f00c';
+  font-family: FontAwesome;
+  font-size: 1.8rem;
+  color: #15aabf;
+  margin-right: 10px;
+}
+
+/* リストスタイル */
+content .articles .article-detail ul{
+  margin: 3rem 0;
+  padding-left: 30px;
+}
+content .articles .article-detail ul li{
+  list-style: disc;
+  margin: 5px 0;
+}
+content .articles .article-detail ol{
+  margin: 3rem 0;
+  padding-left: 30px;
+}
+content .articles .article-detail ol li{
+  list-style: decimal;
+  margin: 5px 0;
+}
+/* 段落 */
+content .articles .article-detail p{
+  margin: 3rem 1rem 5rem;
+  letter-spacing: 0.2rem;
+  font-size: 1.5rem;
+}
+
+/* イタリック体 */
+em{
+  font-style: italic;
+}
+
+/* 画像関連 */
+figure{
+  margin: 0;
+}
+figure img{
+  height: auto ;
+  border: 5px solid whitesmoke;
+}
+
+/* 引用テキスト */
+blockquote{
+  background-color: #fafafa;
+  border: 1px solid #f0f0f0;
+  padding: 2rem;
+  margin: 3rem 0;
+}
+content .articles .article-detail blockquote p{
+  font-size: 1.3rem;
+  margin: 1rem 0;
+}
+
+/* ======= 投稿内容の装飾ここまで ======== */
+
 content .blank {
   width: 50px;
 }
@@ -135,14 +304,17 @@ content .side .profile {
           align-items: center;
   letter-spacing: 1px;
   color: #7b7b7b;
-  background-color: white;
+  /* background-color: white; */
+  background-color: var(--bg-color);
+  box-shadow: var(--box-shadow);
 }
 
 content .side .profile-image {
   width: 60%;
   max-width: 150px;
   border-radius: 50%;
-  border: 15px solid whitesmoke;
+  border: 15px solid var(--bg-color);
+  box-shadow: var(--box-shadow);
   margin: 0 auto;
   display: block;
 }
@@ -168,7 +340,8 @@ content .side .search {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: white;
+  background-color: var(--bg-color);
+  box-shadow: var(--box-shadow);
 }
 
 content .side .search-box {
@@ -181,10 +354,18 @@ content .side .search-form {
   height: 30px;
   padding: 10px;
   width: 90%;
-  border: 1px solid #EBEBEB;
-  background-color: whitesmoke;
+  border: none;
+  background-color: var(--bg-color);
+  box-shadow: var(--inner-shadow);
   border-radius: 5px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  color: var(--text-color);
+}
+content .side .search-form:focus{
+  outline: none;
+}
+content .side .search-form:hover{
+  cursor: pointer;
 }
 
 content .side .search-icon {
@@ -197,7 +378,12 @@ content .side .search-icon {
 content .side .recent {
   margin: 50px 0;
   padding: 50px 0;
-  background-color: white;
+  background-color: var(--bg-color);
+  box-shadow: var(--box-shadow);
+}
+
+content .side .recent a{
+  text-decoration: none;
 }
 
 content .side .recent-title {
@@ -217,11 +403,11 @@ content .side .recent .side-article-image {
   height: 150px;
   -o-object-fit: cover;
      object-fit: cover;
+  filter: grayscale(70%);
 }
 
 content .side .recent .side-article-title {
   margin-top: 10px;
-  color: #7b7b7b;
   font-size: 1.3rem;
   letter-spacing: 0.5px;
   text-align: center;
@@ -229,9 +415,21 @@ content .side .recent .side-article-title {
 }
 
 content .side .recent .side-article:hover {
-  -webkit-box-shadow: 6px 0 25px rgba(0, 0, 0, 0.15);
-          box-shadow: 6px 0 25px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--box-shadow);
   -webkit-transition: 0.2s;
   transition: 0.2s;
+}
+
+content .articles .no-search-hit{
+  display: block;
+  margin: 0 auto;
+  width: 300px;
+}
+content .articles .no-search-text{
+  text-align: center;
+  color: #7b7b7b;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  margin-bottom: 300px ;
 }
 /*# sourceMappingURL=content.css.map */
