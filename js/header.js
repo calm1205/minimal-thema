@@ -1,20 +1,24 @@
 window.addEventListener('load', () => {
 
   // プルダウンメニューリスト
-  const pullDownDOMArray = Array.from(document.querySelectorAll(`.header-menu li a`));
-  pullDownDOMArray.forEach( function(pullDownDOM) {
-    pullDownDOM.addEventListener('mouseover', () => {
-      // デフォルト表示のメニューに対してのみ実行
-      if ( !document.querySelector('.menu').classList.contains('hidden')) { return false};
-
-      const childpullDownDOM = pullDownDOM.parentNode.querySelector(`.sub-menu`);
-        if ( childpullDownDOM ) { childpullDownDOM.style.display = 'block'; };
-        pullDownDOM.parentNode.addEventListener('mouseleave', () => {
-          if (childpullDownDOM ) { childpullDownDOM.style.display = 'none'; };
-        });
-      // };
+  const pullDownDOMArray = Array.from(document.querySelectorAll(`.header-menu li`));
+  pullDownDOMArray.forEach( (pullDownDOM) => {
+    const childPullDownDOMs = Array.from(pullDownDOM.querySelectorAll(`.sub-menu li`));
+    childPullDownDOMs.forEach((childPullDown, index)=>{
+      childPullDown.style.transitionDelay = `${0.1 * index}s`;
+      childPullDown.style.top = `${70 + 70*(index)}px`
     });
   });
+  //   pullDownDOM.addEventListener('mouseover', () => {
+  //     // デフォルト表示のメニューに対してのみ実行
+  //     if ( !document.querySelector('.menu').classList.contains('hidden')) { return false};
+  //     const childpullDownDOM = pullDownDOM.parentNode.querySelector(`.sub-menu`);
+  //       if ( childpullDownDOM ) { childpullDownDOM.style.display = 'block'; };
+  //       pullDownDOM.parentNode.addEventListener('mouseleave', () => {
+  //         if (childpullDownDOM ) { childpullDownDOM.style.display = 'none'; };
+  //       });
+  //   });
+  // });
   
   const menuBtn = document.querySelector(`.fa-bars`);
   
