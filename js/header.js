@@ -1,5 +1,13 @@
+window.addEventListener('DOMContentLoaded', ()=>{
+  const firstViewDOM = document.querySelector('.firstView');
+  firstViewDOM.addEventListener('animationstart', ()=>{
+    setTimeout(function(){
+      firstViewDOM.style.display = 'none';
+    }, 4500);
+  });
+});
+
 window.addEventListener('load', () => {
-  
   // プルダウンメニューリスト
   const pullDownDOMArray = Array.from(document.querySelectorAll(`.header-menu li`));
   pullDownDOMArray.forEach( (pullDownDOM) => {

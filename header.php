@@ -11,6 +11,14 @@
 </head>
 <body>
 
+  <!-- ログイン時のローディングUI -->
+  <div class="firstView">
+    <div class="firstView-content">
+      <div class="message">welcome to ginnan blog.</div>
+      <div class="loading"></div>
+    </div>
+  </div>
+
   <!-- 展開されるメニュー -->
   <div class="menu hidden">
     <div class="menu-title">MENU</div>

@@ -1,7 +1,50 @@
 $text-color: #333;
+@keyframes fadeIn {
+  0%   { width: 0; }
+  100% { width: 100%; }
+}
+@keyframes fadeOut {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes curtainFadeOut {
+  0%   { transform: scaleX(1); }
+  100% { transform: scaleX(0); }
+}
 
 * {
   text-decoration: none;
+}
+
+// ========== first view ============
+.firstView{
+  z-index: 9999;
+  position: fixed;
+  width: 100%; height: 100vh;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeOut 2s 2.5s forwards; // four animation
+  &-content{
+    width: 30%;
+    .message{
+      font-size: 2rem;
+      font-family: 'Courgette', cursive;
+      letter-spacing: 0.5px;
+      text-align: center;
+      padding-bottom: 30px;
+      animation: fadeOut 1s .5s forwards; // second animation
+    }
+    .loading{
+      height: 1px;
+      background-color: $text-color;
+      width: 100%;
+      animation: fadeIn .5s forwards, // first animation
+                  curtainFadeOut 1s ease 1.5s forwards; // third animation
+    }
+
+  }
 }
 
 /* ----- top ----- */
@@ -12,14 +55,19 @@ $text-color: #333;
   background-image: url('../image/budapest.jpg');
   background-attachment: fixed;
   background-size: cover;
+  background-position: 50% 35%;
   &-title {
     position: fixed;
-    top: 30%; left: 50%;
+    top: 40%; left: 50%;
     transform: translate(-50%, -50%);
     h1{
       font-size: 6rem;
       letter-spacing: 1rem;
       margin-bottom: 10px;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 0;
+      animation: fadeIn 3s 3s forwards;
       a{
         color: $text-color;
         &:hover{ opacity: 0.5; }
@@ -29,6 +77,9 @@ $text-color: #333;
       font-size: 1.3rem;
       text-align: center;
       letter-spacing: 1px;
+      opacity: 0;
+      animation: fadeOut 1s 6s forwards;
+      animation-direction: reverse;
     }
   }
 }
@@ -302,7 +353,6 @@ content .side .profile {
           align-items: center;
   letter-spacing: 1px;
   color: #7b7b7b;
-  /* background-color: white; */
   background-color: var(--bg-color);
   box-shadow: var(--box-shadow);
 }
