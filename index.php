@@ -47,14 +47,14 @@
             <?php next_posts_link('next'); ?>
           </div>
         </div>
-      </div><!-- /articles  -->
+      </div>
 
       <?php get_sidebar(); ?>
     <?php else : ?>
       <div class="articles" style="width: 100%;">
         <img src="<?php echo get_template_directory_uri(); ?>/image/sitdown.png" class="no-search-hit">
         <p class="no-search-text">その検索にヒットするタイトルの記事はありません。。。</p>
-      </div><!-- /articles  -->
+      </div>
     <?php endif; ?>
         
   </content>
