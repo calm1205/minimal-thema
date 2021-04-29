@@ -1,10 +1,14 @@
 <?php get_header(); ?>
 
   <div class="top">
-    <h1 class="top-title"><a href="<?php bloginfo('url') ?>">Ginnan blog</a></h1>
-    <div class="top-sub-title">
-      銀杏ブログへようこそ。<br>
-      主にプログラミングの学習アウトプットです。
+    <div class="top-title">
+      <h1>
+        <a href="<?php bloginfo('url') ?>">Ginnan blog</a>
+      </h1>
+      <div class="top-title-sub">
+        銀杏ブログへようこそ。<br>
+        主にプログラミングの学習アウトプットです。
+      </div>
     </div>
   </div>
   
