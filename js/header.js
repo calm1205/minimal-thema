@@ -1,5 +1,5 @@
 window.addEventListener('load', () => {
-
+  
   // プルダウンメニューリスト
   const pullDownDOMArray = Array.from(document.querySelectorAll(`.header-menu li`));
   pullDownDOMArray.forEach( (pullDownDOM) => {
@@ -9,19 +9,18 @@ window.addEventListener('load', () => {
       childPullDown.style.top = `${70 + 70*(index)}px`
     });
   });
-  //   pullDownDOM.addEventListener('mouseover', () => {
-  //     // デフォルト表示のメニューに対してのみ実行
-  //     if ( !document.querySelector('.menu').classList.contains('hidden')) { return false};
-  //     const childpullDownDOM = pullDownDOM.parentNode.querySelector(`.sub-menu`);
-  //       if ( childpullDownDOM ) { childpullDownDOM.style.display = 'block'; };
-  //       pullDownDOM.parentNode.addEventListener('mouseleave', () => {
-  //         if (childpullDownDOM ) { childpullDownDOM.style.display = 'none'; };
-  //       });
-  //   });
-  // });
+  
+  // メニューバー スクロール位置でカラー変更
+  window.addEventListener('scroll', ()=>{
+    const header = document.querySelector('header');
+    if( window.scrollY > document.documentElement.clientHeight){
+      header.style.backgroundColor = 'white';
+    }else{
+      header.style.backgroundColor = '';
+    }
+  });
   
   const menuBtn = document.querySelector(`.fa-bars`);
-  
   // メニューボタンを押した時
   menuBtn.addEventListener('click', () => {
     // 展開メニューの表示
