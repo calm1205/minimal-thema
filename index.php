@@ -12,31 +12,60 @@
     </div>
   </div>
   
+  <div class="greet">
+    <div class="greet-box">
+      <div class="line"></div>
+      <div class="title">blogs</div>
+      <div class="detail">
+        2年間メーカーSEとして勤務した後、プログラミング教育事業へ転職。<br>
+        タイトルの由来は居酒屋でたまたま銀杏串を食べてる時にブログやろうと思い立ったから。<br>
+        無駄なく”シンプルなブログ”を目指したい。
+      </div>
+      <div class="logs"></div>
+    </div>
+  </div>
+
   <content>
     <?php if ( have_posts() ) : ?>
       <div class="articles">
-        <?php  while ( have_posts() ) : the_post(); ?>
-          <article class="article">
-            <div class="article-top">
-              <div class="article-top-date"><?php the_time('Y/n/j'); ?></div>
-              <a href="<?php the_permalink(); ?>">
-                <div class="article-top-title"><?php the_title(); ?></div>
-              </a>
-              <div class="article-top-category"><?php the_category( ' ' ); ?></div>
-            </div>
+        <?php $index = 1; ?>
+        <?php while ( have_posts() ) : the_post(); ?>
 
-            <?php if ( has_post_thumbnail() ) : ?>
-              <?php the_post_thumbnail( '', array('class' => 'article-image')); ?>
-            <?php else : ?>
-              <img src="<?php echo get_template_directory_uri(); ?>/image/sauna.jpeg" class="article-image">
-            <?php endif; ?>
-            <div class="article-detail">
-              <div class="article-detail-text"><?php the_excerpt(); ?></div>
-              <a href="<?php the_permalink(); ?>">
-                <div class="read-more">READ MORE</div>
-              </a>
+          <?php if ($index % 3 == 1) :?>
+            <!-- 3記事毎にグルーピング -->
+            <div class="articles-shelf">
+          <?php endif ; ?>
+
+          <article class="article">
+            <a href="<?php the_permalink(); ?>" class="article-thumbnail">
+              <?php if ( has_post_thumbnail() ) : ?>
+                <?php the_post_thumbnail( '', array('class' => 'article-image')); ?>
+              <?php else : ?>
+                <!-- サムネイル未設定はカテゴリーからアイコン表示 -->
+                <?php include('logo_judge.php')?>
+              <?php endif; ?>
+            </a>
+
+            <div class="article-top">
+              <div class="article-top-category"><?php the_category( ' ' ); ?></div>
+              <div class="article-top-date"><?php the_time('Y/n/j'); ?></div>
             </div>
+            <a href="<?php the_permalink(); ?>">
+              <div class="article-title"><?php the_title(); ?></div>
+            </a>
+            
+            <!--
+            <div class="article-subheading">
+              <div class="article-subheading-text"><?php the_excerpt(); ?></div>
+            </div>
+            -->
           </article>
+
+          <?php if ($index % 3 == 0 || $wp_query->found_posts == $index) :?>
+            </div>
+            <!-- グルーピング閉じタグ -->
+          <?php endif ; ?>
+          <?php $index++; ?>
         <?php endwhile; ?>
 
         <div class="pagination">
@@ -49,7 +78,7 @@
         </div>
       </div>
 
-      <?php get_sidebar(); ?>
+      <?#php get_sidebar(); ?>
     <?php else : ?>
       <div class="articles" style="width: 100%;">
         <img src="<?php echo get_template_directory_uri(); ?>/image/sitdown.png" class="no-search-hit">

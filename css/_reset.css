@@ -11,6 +11,9 @@
 html{
   font-size: 62.5%;
 }
+svg{
+  color: #333;
+}
   /*
     TODO remove settings on BODY since we can't namespace it.
   */

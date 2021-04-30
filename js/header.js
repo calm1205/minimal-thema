@@ -1,9 +1,32 @@
 window.addEventListener('DOMContentLoaded', ()=>{
+  // ファーストビューの読み込みUI
   const firstViewDOM = document.querySelector('.firstView');
   firstViewDOM.addEventListener('animationstart', ()=>{
     setTimeout(function(){
       firstViewDOM.style.display = 'none';
     }, 4500);
+  });
+
+  if(!localStorage.getItem('is_first?')){
+    localStorage.setItem('is_first?', 1);
+  }else{
+    firstViewDOM.style.display = 'none';
+    const title     = document.querySelector('.top h1');
+    const sub_title = document.querySelector('.top-title-sub')
+    title.style.animation = 'none';
+    title.style.width = '100%';
+    sub_title.style.animation = 'none';
+    sub_title.style.opacity = '1';
+  };
+
+  // カテゴリーで非表示にしたいカテゴリー
+  const invisibleCategory = 'PROGRAMING';
+  const categories = Array.from(document.querySelectorAll('.article-top-category a'));
+  categories.forEach((category)=>{
+    const categoryText = category.textContent;
+    if ( categoryText == invisibleCategory){
+      category.style.display = 'none';
+    }
   });
 });
 
@@ -18,16 +41,40 @@ window.addEventListener('load', () => {
     });
   });
   
-  // メニューバー スクロール位置でカラー変更
+  const header = document.querySelector('header');
+  const articles = Array.from(document.querySelectorAll('.article'));
   window.addEventListener('scroll', ()=>{
-    const header = document.querySelector('header');
-    if( window.scrollY > document.documentElement.clientHeight){
+    // メニューバー スクロール位置でカラー変更
+    const windowHeight = window.innerHeight;
+    if( window.scrollY > windowHeight){
       header.style.backgroundColor = 'white';
     }else{
       header.style.backgroundColor = '';
     }
+    // スクロールで記事表示
+    articles.forEach((article)=>{
+      domDisplayControl(windowHeight,article);
+    });
+
+    // スクロールで最初の小見出し表示
+    domDisplayControl(windowHeight, document.querySelector('.greet-box'));
   });
   
+  function domDisplayControl(windowHeight,dom){
+    const domTop = dom.getBoundingClientRect().top;
+    const scroll = window.pageYOffset;
+    const offset = domTop + scroll;
+    if( scroll > offset - windowHeight + 200 ){
+      dom.classList.add('active');
+    }
+  }
+  // スクロール位置が低ければ最初から記事表示
+  articles.forEach((article)=>{
+    domDisplayControl(window.innerHeight, article);
+  });
+  domDisplayControl(window.innerHeight, document.querySelector('.greet-box'));
+
+
   const menuBtn = document.querySelector(`.fa-bars`);
   // メニューボタンを押した時
   menuBtn.addEventListener('click', () => {
@@ -83,5 +130,6 @@ window.addEventListener('load', () => {
       }, 450);
     });
   });
+
 
 });
