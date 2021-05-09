@@ -31,35 +31,36 @@ window.addEventListener('DOMContentLoaded', ()=>{
 });
 
 window.addEventListener('load', () => {
-  // プルダウンメニューリスト
+  // メニューリスト
   const pullDownDOMArray = Array.from(document.querySelectorAll(`.header-menu li`));
   pullDownDOMArray.forEach( (pullDownDOM) => {
     const childPullDownDOMs = Array.from(pullDownDOM.querySelectorAll(`.sub-menu li`));
     childPullDownDOMs.forEach((childPullDown, index)=>{
       childPullDown.style.transitionDelay = `${0.1 * index}s`;
-      childPullDown.style.top = `${70 + 70*(index)}px`
+      childPullDown.style.top             = `${70 + 70*(index)}px`
     });
   });
   
+  // スクロール時のアニメーション
   const header = document.querySelector('header');
   const articles = Array.from(document.querySelectorAll('.article'));
   window.addEventListener('scroll', ()=>{
-    // メニューバー スクロール位置でカラー変更
     const windowHeight = window.innerHeight;
     if( window.scrollY > windowHeight){
       header.style.backgroundColor = 'white';
     }else{
       header.style.backgroundColor = '';
-    }
-    // スクロールで記事表示
+    };
     articles.forEach((article)=>{
       domDisplayControl(windowHeight,article);
     });
-
-    // スクロールで最初の小見出し表示
-    domDisplayControl(windowHeight, document.querySelector('.greet-box'));
+    const greetDOM = document.querySelector('.greet-box');
+    if (greetDOM){
+      domDisplayControl(windowHeight, greetDOM);
+    }
   });
   
+  // スクロールした時に下からフェードインするアニメーション
   function domDisplayControl(windowHeight,dom){
     const domTop = dom.getBoundingClientRect().top;
     const scroll = window.pageYOffset;
@@ -68,25 +69,46 @@ window.addEventListener('load', () => {
       dom.classList.add('active');
     }
   }
-  // スクロール位置が低ければ最初から記事表示
-  articles.forEach((article)=>{
-    domDisplayControl(window.innerHeight, article);
-  });
-  domDisplayControl(window.innerHeight, document.querySelector('.greet-box'));
 
+  // 画面を開いた時の位置が低ければ最初から記事や小見出しを表示
+  articles.forEach((article)=>{ domDisplayControl(window.innerHeight, article); });
+  const greetDOM = document.querySelector('.greet-box');
+  if (greetDOM){
+    domDisplayControl(window.innerHeight, greetDOM);
+  }
 
-  const menuBtn = document.querySelector(`.fa-bars`);
   // メニューボタンを押した時
-  menuBtn.addEventListener('click', () => {
+  document.querySelector(`.fa-bars`).addEventListener('click', () => {
     // 展開メニューの表示
     const openMenuDOM = document.querySelector(`.menu`);
     openMenuDOM.classList.remove('hidden');
     openMenuDOM.classList.add('show');
-    
     document.querySelector('.header-menu').style.display = 'block';
-    document.querySelector('.sub-menu').style.display = 'block';
-    
     document.querySelector(`html`).classList.add('ban-scroll');
+
+    // + - ボタンの制御
+    const parentMenuDOMs = Array.from(document.querySelectorAll('.menu-item'));
+    parentMenuDOMs.forEach((parentMenu)=>{
+      const subMenu = parentMenu.querySelector('.sub-menu');
+      if (subMenu){
+        if(!parentMenu.querySelector('i')){
+          parentMenu.insertAdjacentHTML('beforeend', '<i class="fas fa-plus"></i>');
+          parentMenu.insertAdjacentHTML('beforeend', '<i class="fas fa-minus"></i>');
+          const plusBtn  = parentMenu.querySelector('.fa-plus');
+          const minusBtn = parentMenu.querySelector('.fa-minus');
+          plusBtn.addEventListener('click',()=>{
+            subMenu.style.display  = 'block';
+            plusBtn.style.display  = 'none';
+            minusBtn.style.display = 'block';
+          });
+          minusBtn.addEventListener('click',()=>{
+            subMenu.style.display  = 'none';
+            plusBtn.style.display  = 'block';
+            minusBtn.style.display = 'none';
+          });
+        }
+      }
+    });
     
     // 途中でウィンドウサイズが変更された時
     window.addEventListener('resize', () => {
@@ -98,8 +120,7 @@ window.addEventListener('load', () => {
     });
 
     // closeボタンが押された時
-    const closeDOM = document.querySelector(`.close`);
-    closeDOM.addEventListener('click', () => {
+    document.querySelector(`.close`).addEventListener('click', () => {
       openMenuDOM.classList.add(`non-show`);
       setTimeout(function(){
         openMenuDOM.classList.add(`hidden`);
@@ -109,10 +130,8 @@ window.addEventListener('load', () => {
     });
   });
 
-  const searchBtn = document.querySelector(`.fa-search`);
-
   // 検索ボタンを押した時
-  searchBtn.addEventListener('click', () => {
+  document.querySelector(`.fa-search`).addEventListener('click', () => {
     const searchDOM = document.querySelector(`.search-view`);
     searchDOM.classList.remove('hidden');
     document.querySelector(`.search-view-box-input`).focus();
@@ -120,6 +139,7 @@ window.addEventListener('load', () => {
     searchDOM.classList.add('down');
     document.querySelector(`html`).classList.add('ban-scroll');
     
+    // xボタンを押した時
     const closeDOM = document.querySelector(`.fa-times`);
     closeDOM.addEventListener('click', () => {
       searchDOM.classList.add(`upper`);

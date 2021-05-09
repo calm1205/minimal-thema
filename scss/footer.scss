@@ -1,0 +1,70 @@
+@import 'module.scss';
+
+@media screen and (max-width: 959px) {
+  footer .footer-content-box {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+}
+@media screen and (min-width: 960px) {
+  footer {
+    height: 400px;
+  }
+  footer .footer-content {
+    height: 330px;
+    display: flex;
+  }
+  footer .footer-content-box {
+    width: 33%;
+  }
+}
+
+footer {
+  position: relative;
+  background-color: white;
+  .footer-content {
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px 0 0;
+    &-title {
+      font-size: 2rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+    &-box .textwidget p{
+      margin-top: 30px;
+      padding-right: 30px;
+      color: gray;
+      letter-spacing: 1px;
+    }
+    li.last-list {
+      box-sizing: border-box;
+      border-top: dashed 1px gray;
+      margin-right: 30px;
+      list-style: none;
+    }
+  }
+  .portfolio-list {
+    margin-top: 30px;
+    padding-right: 30px;
+    li {
+      border-top: dashed 1px gray;
+      padding: 15px 10px;
+      color: gray;
+      font-size: 1.3rem;
+    }
+    a{
+      color: gray;
+      &:hover{ opacity: 0.5; }
+    }
+  }
+  .copyright {
+    height: 70px;
+    background-color: $text-color;
+    color: whitesmoke;
+    text-align: center;
+    line-height: 70px;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+  }
+}

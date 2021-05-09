@@ -12,25 +12,26 @@
     </div>
   </div>
   
-  <div class="greet">
-    <div class="greet-box">
-      <div class="line"></div>
-      <div class="title">blogs</div>
-      <div class="detail">
-        2年間メーカーSEとして勤務した後、プログラミング教育事業へ転職。<br>
-        タイトルの由来は居酒屋でたまたま銀杏串を食べてる時にブログやろうと思い立ったから。<br>
-        無駄なく”シンプルなブログ”を目指したい。
+  <?php if (have_posts()):?>
+    <div class="greet">
+      <div class="greet-box">
+        <div class="line"></div>
+        <div class="title">blogs</div>
+        <div class="detail">
+          2年間メーカーSEとして勤務した後、プログラミング教育事業へ転職。<br>
+          タイトルの由来は居酒屋でたまたま銀杏串を食べてる時にブログやろうと思い立ったから。<br>
+          無駄なく”シンプルなブログ”を目指したい。
+        </div>
+        <div class="logs"></div>
       </div>
-      <div class="logs"></div>
     </div>
-  </div>
+  <?php endif;?>
 
   <content>
     <?php if ( have_posts() ) : ?>
       <div class="articles">
         <?php $index = 1; ?>
         <?php while ( have_posts() ) : the_post(); ?>
-
           <?php if ($index % 3 == 1) :?>
             <!-- 3記事毎にグルーピング -->
             <div class="articles-shelf">
@@ -42,7 +43,7 @@
                 <?php the_post_thumbnail( '', array('class' => 'article-image')); ?>
               <?php else : ?>
                 <!-- サムネイル未設定はカテゴリーからアイコン表示 -->
-                <?php include('logo_judge.php')?>
+                <?php include('module/logo_judge.php')?>
               <?php endif; ?>
             </a>
 
@@ -53,12 +54,6 @@
             <a href="<?php the_permalink(); ?>">
               <div class="article-title"><?php the_title(); ?></div>
             </a>
-            
-            <!--
-            <div class="article-subheading">
-              <div class="article-subheading-text"><?php the_excerpt(); ?></div>
-            </div>
-            -->
           </article>
 
           <?php if ($index % 3 == 0 || $wp_query->found_posts == $index) :?>
@@ -68,25 +63,17 @@
           <?php $index++; ?>
         <?php endwhile; ?>
 
-        <div class="pagination">
-          <div class="previous">
-            <?php previous_posts_link('previous'); ?>
-          </div>
-          <div class="next">
-            <?php next_posts_link('next'); ?>
-          </div>
-        </div>
+        <?php include('module/pagination.php');?>
       </div>
 
-      <?#php get_sidebar(); ?>
     <?php else : ?>
       <div class="articles" style="width: 100%;">
         <img src="<?php echo get_template_directory_uri(); ?>/image/sitdown.png" class="no-search-hit">
         <p class="no-search-text">その検索にヒットするタイトルの記事はありません。。。</p>
       </div>
     <?php endif; ?>
-        
   </content>
+  <?php get_sidebar(); ?>
 
   <?php get_footer(); ?>
   <?php wp_footer(); ?>

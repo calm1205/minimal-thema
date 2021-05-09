@@ -22,7 +22,6 @@
   <!-- 展開されるメニュー -->
   <div class="menu hidden">
     <div class="menu-title">MENU</div>
-
     <?php
       $defaults = array(
         'menu_class'      => 'header-menu',
@@ -40,7 +39,7 @@
   <div class="search-view hidden">
     <i class="fas fa-times"></i>
     <div class="search-view-box">
-      <?php get_template_part( 'searchform2' ); ?>
+      <?php get_template_part( 'top_search_form' ); ?>
     </div>
   </div>
 
