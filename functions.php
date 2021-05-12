@@ -17,6 +17,25 @@ function myportfolio_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'myportfolio_scripts' );
 
+// テキストエディタのタグを追加
+function add_shortcode_quicktags() {
+  if ( wp_script_is('quicktags') ) {
+    echo "
+      <script>
+        QTags.addButton( 'p', 'p', '<p></p>' );
+        QTags.addButton( 'h2', 'h2', '<h2></h2>' );
+        QTags.addButton( 'h3', 'h3', '<h3></h3>' );
+        QTags.addButton( 'h4', 'h4', '<h4></h4>' );
+        QTags.addButton( 'prism_shortcode', 'prism', '<pre class=\"line-numbers\"><code class=\"language-markup\"></code></pre>' );
+        QTags.addButton( 'left_arrow_shortcode', '<', '＆lt;' );
+        QTags.addButton( 'right_arrow_shortcode', '>', '＆gt;' );
+        QTags.addButton( 'two_arrow_shortcode', '<>', '＆lt;＆gt;' );
+      </script>
+    ";
+  }
+}
+add_action( 'admin_print_footer_scripts', 'add_shortcode_quicktags' );
+
 // メニュー機能
 register_nav_menus(
   array(
