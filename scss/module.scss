@@ -70,7 +70,7 @@ article div.code-toolbar > .toolbar {
     }
     button{
       border-radius: 0;
-      line-height: 2rem;
+      font-size: 1.4rem;
       &:hover{
         cursor: pointer;
         background-color: $thema-color;
@@ -93,6 +93,12 @@ article pre[class*="prism"] {
   width: calc( 100% + 16px );
   transform: translateX(-30px);
   padding-left: 30px;
+  &.line-numbers{
+    width: calc(100% + -7px);
+  }
+  &[data-line]{
+    width: calc(100% + 7px);
+  }
 }
 
 // キーワード配色
