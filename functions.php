@@ -26,7 +26,7 @@ function add_shortcode_quicktags() {
         QTags.addButton( 'h2', 'h2', '<h2></h2>' );
         QTags.addButton( 'h3', 'h3', '<h3></h3>' );
         QTags.addButton( 'h4', 'h4', '<h4></h4>' );
-        QTags.addButton( 'prism_shortcode', 'prism', '<pre class=\"line-numbers\" data-line=\"\"><code class=\"language-markup\"></code></pre>' );
+        QTags.addButton( 'prism_shortcode', 'prism', '<pre class=\"prism line-numbers\" data-line=\"\"><code class=\"language-markup\"></code></pre>' );
         QTags.addButton( 'left_arrow_shortcode', '<', '＆lt;' );
         QTags.addButton( 'right_arrow_shortcode', '>', '＆gt;' );
         QTags.addButton( 'two_arrow_shortcode', '<>', '＆lt;＆gt;' );
