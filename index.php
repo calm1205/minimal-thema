@@ -30,13 +30,7 @@
   <content>
     <?php if ( have_posts() ) : ?>
       <div class="articles">
-        <?php $index = 1; ?>
         <?php while ( have_posts() ) : the_post(); ?>
-          <?php if ($index % 3 == 1) :?>
-            <!-- 3記事毎にグルーピング -->
-            <div class="articles-shelf">
-          <?php endif ; ?>
-
           <article class="article">
             <a href="<?php the_permalink(); ?>" class="article-thumbnail">
               <?php if ( has_post_thumbnail() ) : ?>
@@ -55,11 +49,6 @@
               <div class="article-title"><?php the_title(); ?></div>
             </a>
           </article>
-
-          <?php if ($index % 3 == 0 || $wp_query->found_posts == $index) :?>
-            </div>
-            <!-- グルーピング閉じタグ -->
-          <?php endif ; ?>
           <?php $index++; ?>
         <?php endwhile; ?>
 
