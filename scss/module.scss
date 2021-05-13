@@ -60,7 +60,7 @@ $thema-color: lightseagreen;
 // 言語名とcopyボタンの表示
 article div.code-toolbar > .toolbar {
 	opacity: 1;
-  top: 0; right: 0;
+  top: 0; right: -30px;
   .toolbar-item{
     background-color: rgba(gray,.5);
     span, button{
@@ -99,14 +99,24 @@ article pre[class*="prism"] {
   &[data-line]{
     width: calc(100% + 7px);
   }
+  .filename{
+    position: absolute;
+    top: 0; left: 0;
+    color: white;
+    background: rgba(224, 224, 224, 0.2);
+    font-size: 1.2rem;
+    padding: 2px 5px;
+  }
 }
 
 // キーワード配色
 article .token{
   &.keyword{color: #D272E2;}
-  &.class-name, &.constant{ color: #DBB16A; }
+  &.class-name, &.constant{ color: #E6BA6E; }
   &.function{ color: #3FB1F5;}
-  &.symbol{ color: #2897A3;}
+  &.symbol{ color: #17B9C4;}
+  &.string{ color: #8DC570;}
+  &.tag{ color: #F16372;}
 }
 article code{
   color: whitesmoke;
