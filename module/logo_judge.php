@@ -61,7 +61,7 @@
     <?php break; ?>
 
   <?php case "React":?>
-    <?php include( "{$absolute_path}/icon/react.html"); ?>
+    <?php include( "{$absolute_path}/icon/react-wordmark.html"); ?>
     <?php break; ?>
 
   <?php case "Python":?>
