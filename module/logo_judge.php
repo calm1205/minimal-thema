@@ -56,7 +56,7 @@
     <?php include( "{$absolute_path}/icon/slack-wordmark.html"); ?>
     <?php break; ?>
 
-  <?php case "Wordpress":?>
+  <?php case "WordPress":?>
     <?php include( "{$absolute_path}/icon/wordpress.html"); ?>
     <?php break; ?>
 
