@@ -83,4 +83,9 @@
   <?php case "Apache":?>
     <?php include( "{$absolute_path}/icon/apache.html"); ?>
     <?php break; ?>
+
+  <?php default ?>
+    <?php include( "{$absolute_path}/icon/ginkgo.html"); ?>
+    <?php break; ?>
+
 <?php endswitch ?>
