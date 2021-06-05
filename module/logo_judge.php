@@ -57,7 +57,7 @@
     <?php break; ?>
 
   <?php case "WordPress":?>
-    <?php include( "{$absolute_path}/icon/wordpress.html"); ?>
+    <?php include( "{$absolute_path}/icon/wordpress-wordmark.html"); ?>
     <?php break; ?>
 
   <?php case "React":?>
