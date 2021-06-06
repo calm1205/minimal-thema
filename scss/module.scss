@@ -4,41 +4,87 @@ $thema-color: lightseagreen;
 
 // ========== first view animation ==========
 @keyframes firstViewFadeIn {
-  from { width: 0; }
-  to   { width: 100%; }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 @keyframes firstViewFadeOut {
-  from { opacity: 1; }
-  to   { opacity: 0; }
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 @keyframes curtainFadeOut {
-  from { transform: scaleX(1); }
-  to   { transform: scaleX(0); }
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
 }
 
 // ========== header menu expansion ==========
-.show     { animation: fadeInMenu 0.5s;}
-.non-show { animation: fadeOutMenu 0.5s;}
+.show {
+  animation: fadeInMenu 0.5s;
+}
+.non-show {
+  animation: fadeOutMenu 0.5s;
+}
 @keyframes fadeInMenu {
-  from { opacity: 0; width: 0; }
-  to   { opacity: 1; width: 100vw; }
+  from {
+    opacity: 0;
+    width: 0;
+  }
+  to {
+    opacity: 1;
+    width: 100vw;
+  }
 }
 @keyframes fadeOutMenu {
-  from { opacity: 1; width: 100vw; }
-  to   { opacity: 0; width: 0; }
+  from {
+    opacity: 1;
+    width: 100vw;
+  }
+  to {
+    opacity: 0;
+    width: 0;
+  }
 }
 
 // ========== header search animation ==========
-.down       { animation: down 0.5s;}
-.upper      { animation: upper 0.5s;}
-.ban-scroll { overflow: hidden; }
+.down {
+  animation: down 0.5s;
+}
+.upper {
+  animation: upper 0.5s;
+}
+.ban-scroll {
+  overflow: hidden;
+}
 @keyframes down {
-  from { opacity: 0; height: 0; }
-  to   { opacity: 1; height: 100vh; }
+  from {
+    opacity: 0;
+    height: 0;
+  }
+  to {
+    opacity: 1;
+    height: 100vh;
+  }
 }
 @keyframes upper {
-  from { opacity: 1; height: 100vh; }
-  to   { opacity: 0; height: 0; }
+  from {
+    opacity: 1;
+    height: 100vh;
+  }
+  to {
+    opacity: 0;
+    height: 0;
+  }
 }
 
 // ========== all ==========
@@ -49,8 +95,10 @@ $thema-color: lightseagreen;
     font-family: sans-serif;
   }
 }
-.hidden { display: none;}
-.active{
+.hidden {
+  display: none;
+}
+.active {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
@@ -59,19 +107,21 @@ $thema-color: lightseagreen;
 
 // 言語名とcopyボタンの表示
 article div.code-toolbar > .toolbar {
-	opacity: 1;
-  top: 0; right: -30px;
-  .toolbar-item{
-    background-color: rgba(gray,.5);
-    span, button{
+  opacity: 1;
+  top: 0;
+  right: -30px;
+  .toolbar-item {
+    background-color: rgba(gray, 0.5);
+    span,
+    button {
       color: white;
       box-shadow: none;
       background-color: transparent;
     }
-    button{
+    button {
       border-radius: 0;
       font-size: 1.4rem;
-      &:hover{
+      &:hover {
         cursor: pointer;
         background-color: $thema-color;
       }
@@ -80,28 +130,33 @@ article div.code-toolbar > .toolbar {
 }
 
 // 行数表示
-article div.code-toolbar .line-numbers-rows{
+article div.code-toolbar .line-numbers-rows {
   border: none;
 }
-article div.code-toolbar .line-highlight{
-  background: linear-gradient(to right, rgba($thema-color, .3), rgba(0,0,0,0));
+article div.code-toolbar .line-highlight {
+  background: linear-gradient(
+    to right,
+    rgba($thema-color, 0.3),
+    rgba(0, 0, 0, 0)
+  );
 }
 
 // 背景色
-article pre[class*="prism"] { 
-  background-color: #272C35;
-  width: calc( 100% + 16px );
+article pre[class*="prism"] {
+  background-color: #272c35;
+  width: calc(100% + 16px);
   transform: translateX(-30px);
   padding-left: 30px;
-  &.line-numbers{
+  &.line-numbers {
     width: calc(100% + -7px);
   }
-  &[data-line]{
+  &[data-line] {
     width: calc(100% + 7px);
   }
-  .filename{
+  .filename {
     position: absolute;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     color: white;
     background: rgba(224, 224, 224, 0.2);
     font-size: 1.2rem;
@@ -110,14 +165,27 @@ article pre[class*="prism"] {
 }
 
 // キーワード配色
-article .token{
-  &.keyword{color: #D272E2;}
-  &.class-name, &.constant{ color: #E6BA6E; }
-  &.function{ color: #3FB1F5;}
-  &.symbol{ color: #17B9C4;}
-  &.string{ color: #8DC570;}
-  &.tag{ color: #F16372;}
+article .token {
+  &.keyword {
+    color: #d272e2;
+  }
+  &.class-name,
+  &.constant {
+    color: #e6ba6e;
+  }
+  &.function {
+    color: #3fb1f5;
+  }
+  &.symbol {
+    color: #17b9c4;
+  }
+  &.string {
+    color: #8dc570;
+  }
+  &.tag {
+    color: #f16372;
+  }
 }
-article code{
+article code {
   color: whitesmoke;
 }
