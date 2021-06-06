@@ -28,6 +28,10 @@ function add_shortcode_quicktags() {
         QTags.addButton( 'h4', 'h4', '<h4>\\n</h4>' );
         QTags.addButton( 'prism_shortcode', 'prism', '<pre class=\"prism line-numbers\" data-line=\"\">\\n<div class=\"filename\"></div><br>\\n<code class=\"language-markup\">\\n\\n</code>\\n</pre>' );
         QTags.addButton( 'prism_simple_shortcode', 'prism-simple', '<pre class=\"prism\">\\n<code class=\"language-markup\">\\n\\n</code>\\n</pre>' );
+        QTags.addButton( 'prism_javascript_shortcode', 'prism-javascript', '<pre class=\"prism\">\\n<code class=\"language-javascript\">\\n\\n</code>\\n</pre>' );
+        QTags.addButton( 'prism_typescript_shortcode', 'prism-typescritp', '<pre class=\"prism\">\\n<code class=\"language-typescript\">\\n\\n</code>\\n</pre>' );
+        QTags.addButton( 'prism_react_shortcode', 'prism-react', '<pre class=\"prism\">\\n<code class=\"language-react\">\\n\\n</code>\\n</pre>' );
+        QTags.addButton( 'prism_shell_shortcode', 'prism-shell', '<pre class=\"prism\">\\n<code class=\"language-shell\">\\n\\n</code>\\n</pre>' );
         QTags.addButton( 'left_arrow_shortcode', '<', '＆lt;' );
         QTags.addButton( 'right_arrow_shortcode', '>', '＆gt;' );
         QTags.addButton( 'two_arrow_shortcode', '<>', '＆lt;＆gt;' );
