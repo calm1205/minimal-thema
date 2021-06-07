@@ -271,16 +271,8 @@ content {
             font-size: 1.3rem;
             margin: 1rem 0;
           }
-          code {
-            color: white;
-            font-style: italic;
-            display: inline-block;
-            background-color: #272c35;
-            padding: 5px 10px;
-            border-radius: 5px;
-          }
         }
-        code:not(.prism) {
+        code:not([class*="language-"]) {
           color: white;
           font-style: italic;
           display: inline-block;

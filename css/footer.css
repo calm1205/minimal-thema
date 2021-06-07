@@ -159,7 +159,7 @@ article .token.string {
 article .token.tag {
   color: #f16372;
 }
-article code {
+article .prism code {
   color: whitesmoke;
 }
 @media screen and (max-width: 959px) {
