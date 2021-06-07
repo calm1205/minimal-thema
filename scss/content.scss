@@ -147,7 +147,7 @@ content {
       padding: 200px 30px;
       box-sizing: border-box;
       img {
-        width: 100%;
+        max-width: 100%;
         height: auto;
         object-fit: contain;
       }
