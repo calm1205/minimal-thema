@@ -35,7 +35,7 @@ function add_shortcode_quicktags() {
         QTags.addButton( 'left_arrow_shortcode', '<', '＆lt;' );
         QTags.addButton( 'right_arrow_shortcode', '>', '＆gt;' );
         QTags.addButton( 'two_arrow_shortcode', '<>', '＆lt;＆gt;' );
-        QTags.addButton( 'list_shortcode', 'list', '<ul>\n  <li></li>\n  <li></li>\n  <li></li>\n</ul>' );
+        QTags.addButton( 'triple_list_shortcode', 'list', '<ul>\\n  <li></li>\\n  <li></li>\\n  <li></li>\\n</ul>' );
       </script>
     ";
   }
