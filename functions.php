@@ -22,7 +22,8 @@ function add_shortcode_quicktags() {
   if ( wp_script_is('quicktags') ) {
     echo "
       <script>
-        QTags.addButton( 'p', 'p', '<p>\\n</p>' );
+        QTags.addButton( 'p', 'p', '<p></p>' );
+        QTags.addButton( 'span', 'span', '<span style=\"font-weight: bold;\"></span>' );
         QTags.addButton( 'h2', 'h2', '<h2>\\n</h2>' );
         QTags.addButton( 'h3', 'h3', '<h3>\\n</h3>' );
         QTags.addButton( 'h4', 'h4', '<h4>\\n</h4>' );
