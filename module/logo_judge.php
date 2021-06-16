@@ -64,6 +64,10 @@
     <?php include( "{$absolute_path}/icon/react-wordmark.html"); ?>
     <?php break; ?>
 
+  <?php case "GraphQL":?>
+    <?php include( "{$absolute_path}/icon/graphql-wordmark.html"); ?>
+    <?php break; ?>
+
   <?php case "Python":?>
     <?php include( "{$absolute_path}/icon/python.html"); ?>
     <?php break; ?>
