@@ -1,7 +1,7 @@
 <?php
   $absolute_path = get_template_directory();
   $category = get_the_category()[0]->cat_name;
-  $category = ($category == 'PROGRAMING' || $category == 'INFRA')? get_the_category()[1]->cat_name : $category;
+  $category = ($category == 'PROGRAMING' || $category == 'INFRA' || $category == 'LIFE')? get_the_category()[1]->cat_name : $category;
   switch ($category) :
     case "Uncategorized":
 ?>
@@ -86,6 +86,10 @@
 
   <?php case "Apache":?>
     <?php include( "{$absolute_path}/icon/apache.html"); ?>
+    <?php break; ?>
+
+  <?php case "cafe":?>
+    <?php include( "{$absolute_path}/icon/cafe.html"); ?>
     <?php break; ?>
 
   <?php default ?>

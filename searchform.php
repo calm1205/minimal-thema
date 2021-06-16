@@ -10,7 +10,7 @@
         <?php $category_name = strtolower($category->name); ?>
         <?php $category_link = get_category_link($category->term_id); ?>
         <?php $template_directory = get_template_directory_uri(); ?>
-        <?php if($category_name != 'programing' && $category_name != 'infra'): ?>
+        <?php if($category_name != 'programing' && $category_name != 'infra' && $category_name != 'life'): ?>
           <a href="<?php echo $category_link; ?>">
             <?php include("icon/{$category_name}.html");?>
             <span><?php echo $category_name;?></span>
