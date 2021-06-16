@@ -23,11 +23,13 @@ function add_shortcode_quicktags() {
     echo "
       <script>
         QTags.addButton( 'p', 'p', '<p></p>' );
-        QTags.addButton( 'span', 'span', '<span style=\"font-weight: bold;\"></span>' );
+        QTags.addButton( 'code', 'code', '<code></code>' );
+        QTags.addButton( 'power', 'power', '<span style=\"font-weight: bold;\"></span>' );
         QTags.addButton( 'h2', 'h2', '<h2>\\n</h2>' );
         QTags.addButton( 'h3', 'h3', '<h3>\\n</h3>' );
         QTags.addButton( 'h4', 'h4', '<h4>\\n</h4>' );
         QTags.addButton( 'prism_shortcode', 'prism', '<pre class=\"prism line-numbers\" data-line=\"\">\\n<div class=\"filename\"></div><br>\\n<code class=\"language-markup\">\\n\\n</code>\\n</pre>' );
+        QTags.addButton( 'prism_file_name', 'file_name', '<div class=\"filename\"></div><br>' );
         QTags.addButton( 'prism_simple_shortcode', 'prism-simple', '<pre class=\"prism\">\\n  <code class=\"language-markup\">\\n\\n  </code>\\n</pre>' );
         QTags.addButton( 'prism_javascript_shortcode', 'prism-javascript', '<pre class=\"prism\">\\n<code class=\"language-javascript\">\\n\\n</code>\\n</pre>' );
         QTags.addButton( 'prism_typescript_shortcode', 'prism-typescritp', '<pre class=\"prism\">\\n<code class=\"language-typescript\">\\n\\n</code>\\n</pre>' );
