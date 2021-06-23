@@ -411,6 +411,19 @@ content {
       }
     }
   }
+
+  .no-hit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      width: 50vw;
+      max-width: 400px;
+    }
+    p {
+      font-size: 1.3rem;
+    }
+  }
 }
 
 .side {
