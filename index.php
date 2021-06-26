@@ -51,12 +51,11 @@
           </article>
           <?php $index++; ?>
         <?php endwhile; ?>
-
-        <?php include('module/pagination.php');?>
       </div>
+    <?php include('module/pagination.php');?>
 
     <?php else : ?>
-      <div class="articles" style="width: 100%;">
+      <div class="no-hit">
         <img src="<?php echo get_template_directory_uri(); ?>/image/sitdown.png" class="no-search-hit">
         <p class="no-search-text">その検索にヒットするタイトルの記事はありません。。。</p>
       </div>

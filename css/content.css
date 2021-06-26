@@ -102,7 +102,8 @@ article div.code-toolbar > .toolbar {
 article div.code-toolbar > .toolbar .toolbar-item {
   background-color: rgba(128, 128, 128, 0.5);
 }
-article div.code-toolbar > .toolbar .toolbar-item span, article div.code-toolbar > .toolbar .toolbar-item button {
+article div.code-toolbar > .toolbar .toolbar-item span,
+article div.code-toolbar > .toolbar .toolbar-item button {
   color: white;
   box-shadow: none;
   background-color: transparent;
@@ -119,7 +120,11 @@ article div.code-toolbar .line-numbers-rows {
   border: none;
 }
 article div.code-toolbar .line-highlight {
-  background: linear-gradient(to right, rgba(32, 178, 170, 0.3), rgba(0, 0, 0, 0));
+  background: linear-gradient(
+    to right,
+    rgba(32, 178, 170, 0.3),
+    rgba(0, 0, 0, 0)
+  );
 }
 article pre[class*="prism"] {
   background-color: #272c35;
@@ -145,7 +150,8 @@ article pre[class*="prism"] .filename {
 article .token.keyword {
   color: #d272e2;
 }
-article .token.class-name, article .token.constant {
+article .token.class-name,
+article .token.constant {
   color: #e6ba6e;
 }
 article .token.function {
@@ -399,7 +405,8 @@ content.single-article .article-detail p {
   margin: 20px 0;
   letter-spacing: 1px;
 }
-content.single-article .article-detail ul, content.single-article .article-detail ol {
+content.single-article .article-detail ul,
+content.single-article .article-detail ol {
   border: 2px solid silver;
   margin: 20px 0;
   padding: 20px 50px;
@@ -556,12 +563,14 @@ content .pagination {
   justify-content: center;
   margin: 150px auto;
 }
-content .pagination a, content .pagination span {
+content .pagination a,
+content .pagination span {
   display: block;
   font-size: 1.3rem;
   color: #333;
 }
-content .pagination a:hover, content .pagination span:hover {
+content .pagination a:hover,
+content .pagination span:hover {
   color: lightseagreen;
 }
 content .pagination-number {
