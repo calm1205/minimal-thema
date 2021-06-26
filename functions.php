@@ -39,6 +39,9 @@ function add_shortcode_quicktags() {
         QTags.addButton( 'right_arrow_shortcode', '>', '＆gt;' );
         QTags.addButton( 'two_arrow_shortcode', '<>', '＆lt;＆gt;' );
         QTags.addButton( 'triple_list_shortcode', 'list', '<ul>\\n  <li></li>\\n  <li></li>\\n  <li></li>\\n</ul>' );
+        QTags.addButton( 'video', 'video', '<video src=\"\" autoplay muted loop />' );
+        QTags.addButton( 'center', 'center', '<div class=\"center\">\\n</div>' );
+        QTags.addButton( 'parallel', 'parallel', '<div class=\"parallel\">\\n</div>' );
       </script>
     ";
   }

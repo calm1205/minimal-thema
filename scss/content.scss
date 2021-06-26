@@ -281,6 +281,18 @@ content {
           padding: 5px 10px;
           border-radius: 5px;
         }
+        .center {
+          display: flex;
+          justify-content: center;
+        }
+        .parallel {
+          display: flex;
+          justify-content: space-evenly;
+        }
+        video {
+          margin: 10px 0;
+          border: 3px solid lightgray;
+        }
       }
     }
   }
