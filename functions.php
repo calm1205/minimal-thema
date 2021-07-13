@@ -81,7 +81,7 @@ add_action( 'widgets_init', 'my_widgets_init' );
 // メインのページでのみcafeの投稿を除外
 function exclude_category( $query ) {
   if ( $query->is_home() && $query->is_main_query() ) {
-    $query->set( 'cat', '-12' ); // 12がcafeカテゴリーのID
+    $query->set( 'cat', '-16' ); // 12がcafeカテゴリーのID
   }
 }
 add_action( 'pre_get_posts', 'exclude_category' );
