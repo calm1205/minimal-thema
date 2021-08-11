@@ -288,6 +288,7 @@ content {
         .parallel {
           display: flex;
           justify-content: space-evenly;
+          align-items: center;
         }
         video {
           margin: 10px 0;
@@ -424,7 +425,7 @@ content {
     }
   }
 
-  .no-hit{
+  .no-hit {
     display: flex;
     flex-direction: column;
     align-items: center;
